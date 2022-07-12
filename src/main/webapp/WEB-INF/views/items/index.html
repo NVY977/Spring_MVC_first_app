@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All items</title>
+</head>
+<body>
+
+<div th:each="item : ${items}">
+    <a th:href="@{/items/{id}(id=${item.getId()})}" th:text="${item.getName()}">item</a>
+</div>
+<br/>
+<hr/>
+<a href="items/new">Create new item</a>
+</body>
+</html>

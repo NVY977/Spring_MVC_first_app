@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Concrete item</title>
+</head>
+<body>
+<p th:text="${item.getName()}">NAME</p>
+<p th:text="${item.getCost()}">COST</p>
+<p th:text="${item.getId()}">ID</p>
+<br/>
+<hr/>
+<a th:href="@{/items/{id}/edit(id=${item.getId()})}">Edit</a>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/items/{id}(id=${item.getId()})}" th:object="${item}">
+    <input type="submit" value="Delete item!"/>
+</form>
+</body>
+</html>

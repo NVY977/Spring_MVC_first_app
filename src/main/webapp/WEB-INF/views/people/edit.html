@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Person</title>
+</head>
+<body>
+<!--
+Почему мы можем использовать PATCH (html5 поддерживает только POST и GET
+На самом деле thymeleaf реализует механизм вида:
+<form method="POST"...
+    <input .... value="patch">
+Таким образом мы помещаем PATCH в эту скрытую переменную
+-->
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <label for="surname">Enter surname:  </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <br/>
+    <input type="submit" value="Update person!"/>
+</form>
+</body>
+</html>

@@ -5,16 +5,14 @@
     <title>Concrete person</title>
 </head>
 <body>
-<p th:text="${person.getName()}">NAME</p>
-<p th:text="${person.getSurname()}">COST</p>
-<p th:text="${person.getId()}">ID</p>
-<br/>
-<hr/>
+<p th:text="${person.getName() + ', ' + person.getAge()}">VALUE</p>
+<p th:text="${'Email: ' + person.getEmail()}">VALUE</p>
+<p th:text="${person.getId()}">VALUE</p>
+
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
-<br/>
-<hr/>
-<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
-    <input type="submit" value="Delete person!"/>
+
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete"/>
 </form>
 </body>
 </html>

@@ -2,7 +2,6 @@ package ru.nvy.springmvc.dao.person;
 
 import org.springframework.stereotype.Component;
 import ru.nvy.springmvc.model.person.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 

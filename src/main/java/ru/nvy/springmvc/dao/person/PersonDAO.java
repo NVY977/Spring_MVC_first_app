@@ -33,7 +33,7 @@ public class PersonDAO {
     /**
      * Show all people
      *
-     * @return
+     * @return people
      */
     public List<Person> index() {
         List<Person> people = new ArrayList<>();
@@ -60,7 +60,7 @@ public class PersonDAO {
      * Show only one Person
      *
      * @param id
-     * @return
+     * @return person
      */
     public Person show(int id) {
         Person person = null;
